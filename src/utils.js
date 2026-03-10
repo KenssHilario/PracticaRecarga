@@ -1,0 +1,1 @@
+export const ICONS_PATH = new URL("../assets/icons", import.meta.url).href;
