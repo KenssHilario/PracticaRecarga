@@ -1,4 +1,4 @@
-import { LitElement } from "lit";
+import { LitElement, html } from "lit";
 import styles from "./feature-recharge-phone.css.js";
 import { RegisterPhone } from "./steps/register-phone/RegisterPhone.js";
 
@@ -30,3 +30,5 @@ export class FeatureRechargePhone extends LitElement {
         `;
     }
 }
+
+customElements.define("feature-recharge-phone", FeatureRechargePhone);

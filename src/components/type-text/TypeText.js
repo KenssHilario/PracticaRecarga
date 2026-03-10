@@ -1,5 +1,5 @@
 import { css, html, LitElement } from "lit";
-import { unsafeHTML } from "lit";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import styles from "./type-text.css.js";
 import { unsafeStatic } from "lit/static-html.js";
 
@@ -42,8 +42,8 @@ export class TypeText extends LitElement {
             `weight-${this.weight}`,
             `variant-${this.variant}`
         ];
-        /*const forInput = this.forInput ? `for="input${this.forInput}"` : "";*/
-        return html`${unsafeHTML(`<${this.tag} class="${styles.join(" ")}"${forInputAttribute}${this.text}</${this.tag}>`)}`;
+        const forInput = this.forInput ? `for="input${this.forInput}"` : "";
+        return html`${unsafeHTML(`<${this.tag} class="${styles.join(" ")}"${forInput}>${this.text}</${this.tag}>`)}`;
     }
 
     static get styles() {

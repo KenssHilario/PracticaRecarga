@@ -1,4 +1,4 @@
-import { LitElement } from "lit";
+import { LitElement, html } from "lit";
 import "../../../components/type-text/TypeText.js";
 import styles from "./separator-footer.css.js";
 
@@ -23,8 +23,8 @@ export class SeparatorFooter extends LitElement {
                 <hr />
                 <type-text 
                     text=${this.text} 
-                    size="small">
-                    tag="footer"
+                    size="small"
+                    tag="footer">
                 </type-text>
             </footer>
         `;

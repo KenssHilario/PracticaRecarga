@@ -1,6 +1,6 @@
-import { LitElement } from "lit";
-import "../../components/type-text/TypeText.js";
-import "../../../components/type-icon/TypeIcon";
+import { LitElement, html } from "lit";
+import "../../../components/type-text/TypeText.js";
+import "../../../components/type-icon/TypeIcon.js";
 import styles from "./button-default.css.js";
 
 export class ButtonDefault extends LitElement {
@@ -22,7 +22,7 @@ export class ButtonDefault extends LitElement {
         return html`
             <button class="button-default-container">
                 <type-text variant="alt" text="${this.text}" size="s" weight="bold" tag="span"></type-text>
-                <type-icon name="arrow-right" size="s"></type-icon>
+                <type-icon icon="arrow-right" size="s"></type-icon>
             </button>
         `;
     }

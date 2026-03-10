@@ -32,7 +32,7 @@ export class RegisterPhone extends LitElement {
     render() {
         return html`
             <div class="register-phone-container">
-                <div> class="register-phone-header">
+                <div class="register-phone-header">
                     <type-icon icon="smartphone"></type-icon>
                     <type-text 
                         text="Recarga tu celular" 
@@ -55,13 +55,13 @@ export class RegisterPhone extends LitElement {
                     textFooter="0/9 dígitos"
                     @phone-number-change=${this._handlePhoneNumberChange}
                 ></field-form>
-                <button-default>
+                <button-default
                     text="Continuar"
                     @click=${() => alert(`Número de teléfono ingresado: ${this._phoneNumber}`)}
-                </button-default>
-                <separator-footer 
-                    text="Las recargas se procesan de inmediato. Asegurate de ingresar el número correcto">
-                </separator-footer>
+                ></button-default>
+                <separator-footer
+                    text="Las recargas se procesan de inmediato. Asegurate de ingresar el número correcto"
+                ></separator-footer>
             </div>
         `;
     }

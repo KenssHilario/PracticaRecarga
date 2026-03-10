@@ -1,4 +1,4 @@
-import { LitElement, nothing } from "lit";
+import { LitElement, nothing, html } from "lit";
 import "../../components/type-text/TypeText.js";
 
 import styles from "./field-form.css.js";
@@ -47,7 +47,7 @@ export class FieldForm extends LitElement {
 
     _handleInputChange(e) {
         const inputValue = e.target.value;
-        this._hasLetters = /[a-zA-Z]/.test(inputValue);
+        this._hazLetters = /[a-zA-Z]/.test(inputValue);
         this._phoneNumber = inputValue.replace(/\D/g, "");
         this._countNumbers = this._phoneNumber.length;
         this.dispatchEvent(new CustomEvent("phone-number-change", {
@@ -73,13 +73,7 @@ export class FieldForm extends LitElement {
                 @input=${this._handleInputChange}
                 maxlength="9"
                 .value=${this._phoneNumber}
-                @input=${this._handleInputChange}
             >
-            <type-text 
-                text="${this._countNumbers}/9 dígitos"
-                size="xs"
-                tag="span"
-            ></type-text>
             <type-text 
                 text="${this._countNumbers}/9 dígitos"
                 size="xs"
@@ -99,3 +93,5 @@ export class FieldForm extends LitElement {
         `;
     }
 }
+
+customElements.define("field-form", FieldForm);

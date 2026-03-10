@@ -1,5 +1,5 @@
-import { LitElement } from "lit";
-import { ICONS_PATH } from "../utils.js";
+import { LitElement, html } from "lit";
+import { ICONS_PATH } from "../../utils.js";
 import styles from "./type-icon.css.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
@@ -25,11 +25,12 @@ export class TypeIcon extends LitElement {
             this.icon === "smartphone" ? "smartphone-icon" : "",
         ];
         return html`
-            <img class="${styles.join(' ')}" src="${ICONS_PATH}${this.icon}.svg" alt="${this.icon}">
+            <img class="${styles.join(' ')}" src="${ICONS_PATH}/${this.icon}.svg" alt="${this.icon}">
         `;
     }
 
     update(changedProps) {
+        super.update(changedProps);
         if (changedProps.has("icon")) {
             fetch(`../../assets/icons/${this.icon}.svg`)
                 .then(r => r.text())
